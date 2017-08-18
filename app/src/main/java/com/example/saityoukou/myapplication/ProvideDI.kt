@@ -4,19 +4,18 @@ package com.example.saityoukou.myapplication
  * Created by cuichanghao007 on 2017/08/18.
  */
 
-//方法１
-
+//private method 1: package level
 var isMock = false
 val loginRepo by lazy { if(isMock) LoginRepoMock else LoginRepo }
 fun getParamRepo() = if(isMock) ParamsRepoMock() else ParamsRepo()
 
-//方法２
+//private method 2: check flag
 //object ProvideDI {
 //    var isMock = false
 //    val loginRepo by lazy { if(isMock) LoginRepoMock else LoginRepo }
 //}
 
-//方法３
+//private method 3: separate class
 //object Provide {
 //    val loginRepo by lazy { LoginRepo }
 //}
